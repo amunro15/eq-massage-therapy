@@ -1,46 +1,58 @@
 import './styles.scss';
 
-import React, { useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { FormContext } from '../Form/index.tsx';
-import { TextArea } from '../TextArea/index.tsx';
-import { isEmptyObject } from '../../helpers/object.tsx';
-import { scrollToError } from '../../helpers/scrollToError.tsx';
-import { If } from '../If/index.tsx';
-import { Button, ButtonAlign, ButtonType } from '../Button/index.tsx';
 
-export const Footer = () => {
-  const { handleFormChange, handleOnPrepare, form, errors, isPrepare } = useContext(FormContext);
+import { ExerciseOption } from '../ExerciseOption/index.tsx';
+import { If } from '../If/index.tsx';
+
+import { Option } from '../../data/exerciseCategories.ts';
+import { exerciseCategoryOptions } from '../../data/exerciseCategoryOptions.ts';
+import { exerciseData } from '../../data/exerciseData.ts';
+// import dropdown from '../../assets/icons/dropdown.svg';
+import dropdown from '../../assets/icons/dropdown.svg';
+
+import { classname } from '../../helpers/classname.tsx';
+
+export const RecommendationCategory = ({ exerciseCategory }: { exerciseCategory: Option }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const { isPrepare, form } = useContext(FormContext);
 
   useEffect(() => {
-    if (!isEmptyObject(errors)) {
-      scrollToError();
+    if (isPrepare) {
+      setIsOpen(true);
     }
-  }, [errors]);
+  }, [isPrepare]);
 
   return (
-    <div className="eq-footer">
-      <TextArea
-        isDisabled={isPrepare}
-        onChange={(val: string) => handleFormChange('notes', val)}
-        label="Additional Notes"
-        name="notes"
-        value={form['notes']}
-      />
-      <If test={!isPrepare}>
-        <Button align={ButtonAlign.Right} onClick={() => handleOnPrepare(true)}>
-          Prepare
-        </Button>
-      </If>
-      <If test={isPrepare}>
-        <div className="eq-footer-buttons">
-          <Button align={ButtonAlign.Left} onClick={() => handleOnPrepare(false)}>
-            Back
-          </Button>
-          <Button align={ButtonAlign.Right} type={ButtonType.Submit}>
-            Submit
-          </Button>
+    <li className="eq-recommendation_category">
+      <div
+        className={classname('eq-recommendation_category-label', {
+          'eq-recommendation_category-disabled': isPrepare
+        })}
+        onClick={() => !isPrepare && setIsOpen(!isOpen)}>
+        {exerciseCategory.label}
+        <div
+          className={classname('eq-recommendation_category-dropdown', {
+            'eq-recommendation_category-dropdown-invert': isOpen
+          })}>
+          <img src={dropdown as unknown as string} alt="Dropdown" />
         </div>
+      </div>
+      <If test={isOpen && !isPrepare}>
+        {exerciseCategoryOptions[exerciseCategory.value]?.map((option: Option) => {
+          return <ExerciseOption data={exerciseData[option.value]} key={option.value} />;
+        })}
       </If>
-    </div>
+      <If test={isOpen && isPrepare}>
+        {exerciseCategoryOptions[exerciseCategory.value]?.map((option: Option) => {
+          if (Object.keys(form).includes(option.value)) {
+            return <ExerciseOption data={exerciseData[option.value]} key={option.value} />;
+          }
+          return null;
+        })}
+      </If>
+    </li>
   );
 };

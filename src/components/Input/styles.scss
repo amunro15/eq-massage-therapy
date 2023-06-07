@@ -1,45 +1,19 @@
-import '../Input/styles.scss';
+.eq-input {
+  display: flex;
 
+  label {
+    margin-right: 5px;
+  }
 
-import React from 'react';
-import { classname } from '../../helpers/classname.tsx';
+  input {
+    border: 1px solid black;
+    border-radius: 4px;
+    flex: 1 1 auto;
+  }
 
-
-interface Props {
-name: string;
-label: string;
-value: string;
-error?: string;
-minDate?: string;
-isDisabled: boolean;
-onChange: (e) => void;
+  &.eq-input-error {
+    input {
+      border: 1px solid red;
+    }
+  }
 }
-
-
-export const InputDate = ({ name, label, minDate, value, error, isDisabled, onChange }: Props) => {
-const handleOnChange = (e) => {
-onChange?.(e.target.value);
-};
-return (
-<div
-className={classname('eq-input', {
-'eq-input-error': !!error
-})}>
-<label htmlFor={name}>{label}</label>
-<input
-disabled={isDisabled}
-type="date"
-id={name}
-min={minDate}
-name={name}
-onChange={handleOnChange}
-value={value}
-/>
-</div>
-);
-};
-
-
-
-
-

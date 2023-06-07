@@ -1,54 +1,39 @@
 import './styles.scss';
-import React, { useContext } from 'react';
-import { FormContext } from '../Form/index.tsx';
 
-import { ExerciseData } from '../../data/exerciseData';
-import { Checkbox } from '../Checkbox/index.tsx';
-import { If } from '../If/index.tsx';
-import { Heading, HeadingType } from '../Heading/index.tsx';
-import { Paragraph } from '../Paragraph/index.tsx';
+import React, { PropsWithChildren } from 'react';
 import { classname } from '../../helpers/classname.tsx';
 
 interface Props {
-  data: ExerciseData;
+  id: string;
+  name: string;
+  error?: string;
+  isChecked: boolean;
+  isDisabled: boolean;
+  onChange?: () => void;
 }
 
-export const ExerciseOption = ({ data }: Props) => {
-  const { handleFormChange, form, isPrepare } = useContext(FormContext);
-
-  const { header, body, image, list, id } = data;
-
+export const Checkbox = ({
+  children,
+  id,
+  name,
+  error,
+  isChecked = false,
+  isDisabled,
+  onChange
+}: PropsWithChildren<Props>) => {
   return (
     <div
-      className={classname('eq-exercise_option', {
-        'eq-exercise_option-selected': !!form[id],
-        'eq-exercise_option-disabled': isPrepare
+      className={classname('eq-checkbox', {
+        'eq-checkbox-disabled': isDisabled,
+        'eq-checkbox-selected': isChecked,
+        'eq-checkbox-error': !!error
       })}
-      onClick={() => !isPrepare && handleFormChange(id, !form[id])}>
-      <Checkbox isDisabled={isPrepare} id={id} isChecked={!!form[id]} name={header} />
-      <div className="eq-exercise_option-content">
-        <div className="eq-exercise_option-content-copy">
-          <Heading type={HeadingType.H2}>{header}</Heading>
-          {body && <Paragraph>{body}</Paragraph>}
-          <If test={!!list && list.length > 0}>
-            <ul>
-              {list?.map((item: string) => {
-                return <li key={item}>{item}</li>;
-              })}
-            </ul>
-          </If>
-        </div>
-        <If test={!!image && image.length > 0}>
-          <div
-            className={classname('eq-exercise_option-content-image', {
-              'eq-exercise_option-content-image-only': !body && !list
-            })}>
-            {image?.map((item: string) => {
-              return <img src={item} alt={`${header}`} key={item} />;
-            })}
-          </div>
-        </If>
-      </div>
+      onClick={() => {
+        if (!isDisabled) onChange?.();
+      }}
+      role="button">
+      <input disabled={isDisabled} id={id} type="checkbox" name={name} checked={isChecked} />
+      {children}
     </div>
   );
 };

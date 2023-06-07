@@ -1,35 +1,46 @@
 import './styles.scss';
 
-import React from 'react';
-import { classname } from '../../helpers/classname.tsx';
+import React, { useContext, useEffect } from 'react';
+import { FormContext } from '../Form/index.tsx';
+import { TextArea } from '../TextArea/index.tsx';
+import { isEmptyObject } from '../../helpers/object.tsx';
+import { scrollToError } from '../../helpers/scrollToError.tsx';
+import { If } from '../If/index.tsx';
+import { Button, ButtonAlign, ButtonType } from '../Button/index.tsx';
 
-interface Props {
-  name: string;
-  label: string;
-  value: string;
-  error?: string;
-  isDisabled: boolean;
-  onChange: (e) => void;
-}
+export const Footer = () => {
+  const { handleFormChange, handleOnPrepare, form, errors, isPrepare } = useContext(FormContext);
 
-export const Input = ({ name, label, value, error, isDisabled, onChange }: Props) => {
-  const handleOnChange = (e) => {
-    onChange?.(e.target.value);
-  };
+  useEffect(() => {
+    if (!isEmptyObject(errors)) {
+      scrollToError();
+    }
+  }, [errors]);
+
   return (
-    <div
-      className={classname('eq-input', {
-        'eq-input-error': !!error
-      })}>
-      <label htmlFor={name}>{label}</label>
-      <input
-        disabled={isDisabled}
-        id={name}
-        type="text"
-        name={name}
-        onChange={handleOnChange}
-        value={value}
+    <div className="eq-footer">
+      <TextArea
+        isDisabled={isPrepare}
+        onChange={(val: string) => handleFormChange('notes', val)}
+        label="Additional Notes"
+        name="notes"
+        value={form['notes']}
       />
+      <If test={!isPrepare}>
+        <Button align={ButtonAlign.Right} onClick={() => handleOnPrepare(true)}>
+          Prepare
+        </Button>
+      </If>
+      <If test={isPrepare}>
+        <div className="eq-footer-buttons">
+          <Button align={ButtonAlign.Left} onClick={() => handleOnPrepare(false)}>
+            Back
+          </Button>
+          <Button align={ButtonAlign.Right} type={ButtonType.Submit}>
+            Submit
+          </Button>
+        </div>
+      </If>
     </div>
   );
 };

@@ -1,38 +1,10 @@
-import './styles.scss';
+.eq-table_row_divider {
+  border-bottom: solid 1px black;
+  text-align: center;
+  padding: 20px;
 
-
-import React from 'react';
-
-
-interface Props {
-name: string;
-label: string;
-value: string;
-isDisabled: boolean;
-onChange: (e) => void;
+  .eq-paragraph {
+    color: red;
+    font-size: 14px;
+  }
 }
-
-
-export const TextArea = ({ name, label, value, isDisabled, onChange }: Props) => {
-const handleOnChange = (e) => {
-onChange?.(e.target.value);
-};
-return (
-<div className="eq-text_area">
-<label htmlFor={name}>{label}</label>
-<textarea
-disabled={isDisabled}
-id={name}
-name={name}
-onChange={handleOnChange}
-value={value}
-wrap="hard"
-/>
-</div>
-);
-};
-
-
-
-
-

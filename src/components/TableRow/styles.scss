@@ -1,27 +1,56 @@
-import './styles.scss';
+.eq-table_row {
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid black;
 
+  .eq-table_row-primary {
+    text-align: left;
+    padding: 20px 10px;
+    flex: 1 1 auto;
+  }
 
-import React from 'react';
-import { Paragraph } from '../Paragraph/index.tsx';
-import { Heading, HeadingType } from '../Heading/index.tsx';
+  .eq-table_row-primary_title {
+    font-weight: 600;
+  }
 
+  .eq-table_row-checkbox-container {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 360px;
 
-interface Props {
-header: string;
-body?: string;
+    > :nth-child(2) {
+      background-color: aliceblue;
+    }
+  }
+
+  .eq-table_row-checkbox {
+    display: flex;
+    flex: 1 1 auto;
+
+    // L/R label and Checkboxes
+    > div {
+      display: flex;
+      align-items: center;
+      padding: 5px;
+    }
+
+    // L/R label and Checkboxes
+    > div:first-child {
+      border-left: 1px solid black;
+    }
+
+    // L/R label and Checkboxes
+    > div:not(:last-child) {
+      border-right: 1px solid black;
+    }
+  }
+
+  // L/R label
+  .eq-table_row-checkbox-side {
+    flex: 0 0 40px;
+  }
+
+  .eq-checkbox {
+    flex: 1 1 0;
+  }
 }
-
-
-export const TableRowDivider = ({ header, body }: Props) => {
-return (
-<div className="eq-table_row_divider">
-<Heading type={HeadingType.H2}>{header}</Heading>
-{body && <Paragraph>{body}</Paragraph>}
-</div>
-);
-};
-
-
-
-
-
