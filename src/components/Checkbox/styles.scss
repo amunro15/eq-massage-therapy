@@ -1,0 +1,22 @@
+.eq-checkbox {
+  display: inline-block;
+  cursor: pointer;
+
+  &.eq-checkbox-selected {
+    background-color: aquamarine;
+  }
+
+  input {
+    margin: 0 3px 0 0;
+  }
+
+  &.eq-checkbox-error {
+    input {
+      outline: 1px solid red;
+    }
+  }
+
+  &.eq-checkbox-disabled {
+    cursor: no-drop;
+  }
+}

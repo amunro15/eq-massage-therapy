@@ -1,0 +1,31 @@
+.eq-button {
+  button {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 5px;
+    width: 250px;
+  }
+
+  &.eq-button-primary {
+    button {
+      background-color: cadetblue;
+      border: none;
+      color: white;
+      font-weight: 600;
+    }
+  }
+
+  &.eq-button-center {
+    text-align: center;
+  }
+
+  &.eq-button-right {
+    text-align: right;
+  }
+
+  &.eq-button-display-inline {
+    display: inline-block;
+  }
+}

@@ -1,0 +1,35 @@
+.eq-recommendation_category {
+  border: 1px solid black;
+  border-bottom: none;
+
+  &:last-child {
+    border-bottom: 1px solid black;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .eq-recommendation_category-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 30px;
+  }
+
+  .eq-recommendation_category-disabled {
+    cursor: no-drop;
+  }
+
+  .eq-recommendation_category-dropdown {
+    display: inline-block;
+    text-align: right;
+    height: 20px;
+    width: 20px;
+  }
+
+  .eq-recommendation_category-dropdown-invert {
+    transform: rotate(180deg);
+  }
+}

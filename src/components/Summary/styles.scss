@@ -1,0 +1,41 @@
+.eq-summary {
+  .eq-summary-top {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .eq-summary-client {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .eq-summary-info,
+  .eq-summary-client {
+    flex: 0 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .eq-input {
+    margin: 2px 0;
+  }
+
+  .eq-heading {
+    margin: 0;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  .eq-summary-date_time {
+    display: flex;
+
+    .eq-input:first-of-type {
+      margin-right: 15px;
+    }
+
+    .eq-input {
+      flex: 0 1 50%;
+    }
+  }
+}
