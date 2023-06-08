@@ -9,7 +9,6 @@ import { If } from '../If/index.tsx';
 import { Option } from '../../data/exerciseCategories.ts';
 import { exerciseCategoryOptions } from '../../data/exerciseCategoryOptions.ts';
 import { exerciseData } from '../../data/exerciseData.ts';
-// import dropdown from '../../assets/icons/dropdown.svg';
 import dropdown from '../../assets/icons/dropdown.svg';
 
 import { classname } from '../../helpers/classname.tsx';

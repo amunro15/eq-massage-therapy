@@ -10,6 +10,7 @@ import { Heading, HeadingType } from './components/Heading';
 import { Paragraph } from './components/Paragraph';
 import { Form } from './components/Form';
 import { Footer } from './components/Footer';
+import { HorseMapImage } from './components/HorseMapImage';
 
 const App = () => {
   return (
@@ -86,6 +87,9 @@ const App = () => {
           Equestrian Services LLC, cannot be held accountable for horses response, whether favorable
           or adverse, to nutritional intervention.
         </Paragraph>
+
+        <HorseMapImage />
+
         <Heading type={HeadingType.H1}>Recommendations</Heading>
         <Recommendations />
         <Footer />
