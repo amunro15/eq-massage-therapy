@@ -16,4 +16,11 @@
       border: 1px solid red;
     }
   }
+
+  &.eq-input-isPrepare {
+    input {
+      border: none;
+      background-color: white;
+    }
+  }
 }

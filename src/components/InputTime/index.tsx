@@ -9,17 +9,27 @@ interface Props {
   value: string;
   error?: string;
   isDisabled: boolean;
+  isPrepare?: boolean;
   onChange: (e) => void;
 }
 
-export const InputTime = ({ name, label, value, error, isDisabled, onChange }: Props) => {
+export const InputTime = ({
+  name,
+  label,
+  value,
+  error,
+  isDisabled,
+  isPrepare,
+  onChange
+}: Props) => {
   const handleOnChange = (e) => {
     onChange?.(e.target.value);
   };
   return (
     <div
       className={classname('eq-input', {
-        'eq-input-error': !!error
+        'eq-input-error': !!error,
+        'eq-input-isPrepare': !!isPrepare
       })}>
       <label htmlFor={name}>{label}</label>
       <input

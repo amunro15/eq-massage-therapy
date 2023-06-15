@@ -31,6 +31,7 @@ export const Summary = () => {
         <div className="eq-summary-client">
           <Input
             isDisabled={isPrepare}
+            isPrepare={isPrepare}
             onChange={(val: string) => handleFormChange('client-name', val)}
             label="Client name: "
             name="client-name"
@@ -39,6 +40,7 @@ export const Summary = () => {
           />
           <Input
             isDisabled={isPrepare}
+            isPrepare={isPrepare}
             onChange={(val: string) => handleFormChange('horse-name', val)}
             label="Horse name: "
             name="horse-name"
@@ -49,6 +51,7 @@ export const Summary = () => {
           <div className="eq-summary-date_time">
             <InputDate
               isDisabled={isPrepare}
+              isPrepare={isPrepare}
               onChange={(val: string) => handleFormChange('date-of-appointment', val)}
               label="Date: "
               name="date-of-appointment"
@@ -57,6 +60,7 @@ export const Summary = () => {
             />
             <InputTime
               isDisabled={isPrepare}
+              isPrepare={isPrepare}
               onChange={(val: string) => handleFormChange('time-of-appointment', val)}
               label="Time: "
               name="time-of-appointment"
@@ -68,6 +72,7 @@ export const Summary = () => {
           <div className="eq-summary-date_time">
             <InputDate
               isDisabled={isPrepare}
+              isPrepare={isPrepare}
               onChange={(val: string) => handleFormChange('date-of-next-appointment', val)}
               label="Date: "
               minDate={minDate}
@@ -77,6 +82,7 @@ export const Summary = () => {
             />
             <InputTime
               isDisabled={isPrepare}
+              isPrepare={isPrepare}
               onChange={(val: string) => handleFormChange('time-of-next-appointment', val)}
               label="Time: "
               name="time-of-next-appointment"

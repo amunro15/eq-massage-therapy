@@ -9,8 +9,9 @@ import { Recommendations } from './components/Recommendations';
 import { Heading, HeadingType } from './components/Heading';
 import { Paragraph } from './components/Paragraph';
 import { Form } from './components/Form';
-import { Footer } from './components/Footer';
+import { LastNotes } from './components/LastNotes';
 import { HorseMapImage } from './components/HorseMapImage';
+import { Submission } from 'components/Submission';
 
 const App = () => {
   return (
@@ -63,36 +64,45 @@ const App = () => {
           notes: ''
         }}
         onSubmit={() =>
-          html2pdf(document.getElementById('app'), {
-            margin: 5,
-            filename: 'myfile.pdf'
+          html2pdf(document.getElementById('pdf'), {
+            margin: 3,
+            filename: 'myfile.pdf',
+            autoPaging: 'text'
+          }).set({
+            pagebreak: {
+              mode: ['avoid-all', 'css'],
+              before: ['#pagebreak0', '#pagebreak1', '#pagebreak2']
+            }
           })
         }>
-        <Summary />
-        <Heading type={HeadingType.H1}>Muscle Groups and Functions</Heading>
-        <Table />
-        <Paragraph>
-          PLEASE NOTE: EQUINE MASSAGE THERAPY &amp; EQUINE ACUPRESSURE THERAPY ARE NOT SUBSTITUTIONS
-          FOR VETERINARY CARE. IF YOUR HORSE APPEARS ILL OR INJURED, CONTACT YOUR VETERINARIAN
-          IMMEDIATELY.
-        </Paragraph>
-        <Paragraph>
-          PLEASE NOTE: Advice about nutrition, especially in the case of illness, injury, disorders
-          or conditions requiring medical treatment, is not intended to replace veterinary care. It
-          may be used in conjunction with such care to facilitate healing and maintain health. The
-          information offered by Denise Bean-Nigro, DBA Exclusive Equestrian Services LLC, is
-          presented for the purpose of educating horse owners. Suggested feeds, supplements, and
-          procedures are administered voluntarily with the understanding that any adverse reaction
-          is the responsibility of the owner. Furthermore, Denise Bean-Nigro, DBA Exclusive
-          Equestrian Services LLC, cannot be held accountable for horses response, whether favorable
-          or adverse, to nutritional intervention.
-        </Paragraph>
+        <div id="pdf">
+          <Summary />
+          <Heading type={HeadingType.H1}>Muscle Groups and Functions</Heading>
+          <Table />
+          <Paragraph>
+            PLEASE NOTE: EQUINE MASSAGE THERAPY &amp; EQUINE ACUPRESSURE THERAPY ARE NOT
+            SUBSTITUTIONS FOR VETERINARY CARE. IF YOUR HORSE APPEARS ILL OR INJURED, CONTACT YOUR
+            VETERINARIAN IMMEDIATELY.
+          </Paragraph>
+          <Paragraph>
+            PLEASE NOTE: Advice about nutrition, especially in the case of illness, injury,
+            disorders or conditions requiring medical treatment, is not intended to replace
+            veterinary care. It may be used in conjunction with such care to facilitate healing and
+            maintain health. The information offered by Denise Bean-Nigro, DBA Exclusive Equestrian
+            Services LLC, is presented for the purpose of educating horse owners. Suggested feeds,
+            supplements, and procedures are administered voluntarily with the understanding that any
+            adverse reaction is the responsibility of the owner. Furthermore, Denise Bean-Nigro, DBA
+            Exclusive Equestrian Services LLC, cannot be held accountable for horses response,
+            whether favorable or adverse, to nutritional intervention.
+          </Paragraph>
 
-        <HorseMapImage />
+          <HorseMapImage />
 
-        <Heading type={HeadingType.H1}>Recommendations</Heading>
-        <Recommendations />
-        <Footer />
+          <Heading type={HeadingType.H1}>Recommendations</Heading>
+          <Recommendations />
+          <LastNotes />
+        </div>
+        <Submission />
       </Form>
     </div>
   );
