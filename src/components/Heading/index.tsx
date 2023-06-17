@@ -1,3 +1,4 @@
+import './styles.scss';
 import React, { PropsWithChildren } from 'react';
 
 export enum HeadingType {

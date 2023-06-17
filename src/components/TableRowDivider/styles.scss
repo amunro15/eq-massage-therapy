@@ -1,7 +1,10 @@
 .eq-table_row_divider {
   border-bottom: solid 1px black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
   text-align: center;
   padding: 20px;
+  page-break-inside: avoid;
 
   .eq-paragraph {
     color: red;

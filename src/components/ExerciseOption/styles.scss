@@ -2,6 +2,7 @@
   padding: 15px 5px;
   display: flex;
   width: 99%;
+  page-break-inside: avoid;
 
   &:nth-child(odd) {
     background-color: aliceblue;

@@ -1,4 +1,6 @@
 .eq-text_area {
+  page-break-inside: avoid;
+
   textarea {
     height: 100px;
     min-width: 100%;

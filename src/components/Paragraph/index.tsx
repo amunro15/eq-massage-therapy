@@ -1,3 +1,5 @@
+import './styles.scss';
+
 import React, { PropsWithChildren } from 'react';
 
 export const Paragraph = ({ children }: PropsWithChildren) => {

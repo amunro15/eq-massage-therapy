@@ -1,4 +1,6 @@
 .eq-summary {
+  page-break-inside: avoid;
+
   .eq-summary-top {
     display: flex;
     margin-bottom: 20px;
