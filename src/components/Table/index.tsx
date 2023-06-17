@@ -85,44 +85,48 @@ export const Table = () => {
         checkboxLabels={['Not tight', 'Moderate', 'Fully tight']}
         subRows={['Left', 'Right']}
       />
-      <TableRowDivider
-        header="Back Muscles"
-        body="As a way of relating to overall back tightness in your horse, place your hand on your lower back while you are in a standing position. Next, go ahead & attempt to walk WITHOUT moving your waist. If you executed this task correctly, you would have clearly noticed how walking in this restricted manner has blocked your back & leg motion, compromising your ability to move forward, to balance properly, to lengthen your step & to coordinate your limbs efficiently."
-      />
-      <TableRow
-        title="Latissimus Dorsi"
-        checkboxLabels={['Not tight', 'Moderate', 'Fully tight']}
-        subRows={['Left', 'Right']}
-      />
-      <TableRow
-        title="Longissimus Dorsi"
-        checkboxLabels={['Not tight', 'Moderate', 'Fully tight']}
-        subRows={['Left', 'Right']}
-      />
-      <TableRow
-        title="Intercostal Muscles/Rib Cage"
-        checkboxLabels={['Not tight', 'Moderate', 'Fully tight']}
-        subRows={['Left', 'Right']}
-      />
-      <TableRowDivider
-        header="Hindquarter Muscles"
-        body="As a way of relating to overall hindquarter tightness in your horse, try 2 exercises: First, bend over with LOCKED knees & walk around...you will soon discover that you cannot adequately move your legs forward, underneath your body & your ability to propel yourself forward in any manner is severely compromised. Next, try walking around while you are tensing your calf muscles. You will soon feel how this affects your ankle (the human hock equivalent)...Muscle tightness in the hind limbs will restrict the movement of the hip, hock & stifle, thus resulting in a loss of forward power, a shortened step & a loss of balance."
-      />
-      <TableRow
-        title="Hip/Illiacus (False Hip)"
-        checkboxLabels={['Not tight', 'Moderate', 'Fully tight']}
-        subRows={['Left', 'Right']}
-      />
-      <TableRow
-        title="Gluteus"
-        checkboxLabels={['Not tight', 'Moderate', 'Fully tight']}
-        subRows={['Left', 'Right']}
-      />
-      <TableRow
-        title="Tensor Fascia Latae"
-        checkboxLabels={['Not tight', 'Moderate', 'Fully tight']}
-        subRows={['Left', 'Right']}
-      />
+      <div className="eq-table-page_section">
+        <TableRowDivider
+          header="Back Muscles"
+          body="As a way of relating to overall back tightness in your horse, place your hand on your lower back while you are in a standing position. Next, go ahead & attempt to walk WITHOUT moving your waist. If you executed this task correctly, you would have clearly noticed how walking in this restricted manner has blocked your back & leg motion, compromising your ability to move forward, to balance properly, to lengthen your step & to coordinate your limbs efficiently."
+        />
+        <TableRow
+          title="Latissimus Dorsi"
+          checkboxLabels={['Not tight', 'Moderate', 'Fully tight']}
+          subRows={['Left', 'Right']}
+        />
+        <TableRow
+          title="Longissimus Dorsi"
+          checkboxLabels={['Not tight', 'Moderate', 'Fully tight']}
+          subRows={['Left', 'Right']}
+        />
+        <TableRow
+          title="Intercostal Muscles/Rib Cage"
+          checkboxLabels={['Not tight', 'Moderate', 'Fully tight']}
+          subRows={['Left', 'Right']}
+        />
+      </div>
+      <div className="eq-table-page_section">
+        <TableRowDivider
+          header="Hindquarter Muscles"
+          body="As a way of relating to overall hindquarter tightness in your horse, try 2 exercises: First, bend over with LOCKED knees & walk around...you will soon discover that you cannot adequately move your legs forward, underneath your body & your ability to propel yourself forward in any manner is severely compromised. Next, try walking around while you are tensing your calf muscles. You will soon feel how this affects your ankle (the human hock equivalent)...Muscle tightness in the hind limbs will restrict the movement of the hip, hock & stifle, thus resulting in a loss of forward power, a shortened step & a loss of balance."
+        />
+        <TableRow
+          title="Hip/Illiacus (False Hip)"
+          checkboxLabels={['Not tight', 'Moderate', 'Fully tight']}
+          subRows={['Left', 'Right']}
+        />
+        <TableRow
+          title="Gluteus"
+          checkboxLabels={['Not tight', 'Moderate', 'Fully tight']}
+          subRows={['Left', 'Right']}
+        />
+        <TableRow
+          title="Tensor Fascia Latae"
+          checkboxLabels={['Not tight', 'Moderate', 'Fully tight']}
+          subRows={['Left', 'Right']}
+        />
+      </div>
     </div>
   );
 };
