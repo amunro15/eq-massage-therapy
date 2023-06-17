@@ -98,7 +98,6 @@ const App = () => {
 
           <HorseMapImage />
 
-          <Heading type={HeadingType.H1}>Recommendations</Heading>
           <Recommendations />
           <LastNotes />
         </div>
