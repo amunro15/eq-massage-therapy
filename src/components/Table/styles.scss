@@ -1,5 +1,10 @@
 .eq-table {
   border-collapse: collapse;
-  border-right: 3px solid black;
-  border-left: 3px solid black;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+
+  .eq-table-page_section {
+    page-break-inside: avoid;
+  }
 }

@@ -29,30 +29,32 @@ export const Table = () => {
         title="Bowing head through the front limbs"
         checkboxLabels={['Complete', 'Partial', 'Incomplete']}
       />
-      <TableRowDivider
-        header="Upper Neck Muscles (Crest)"
-        body="As a way of relating to overall neck tightness in your horse, walk around while stiffening the base of your neck...you will soon discover the effect it has on your shoulders - the shoulder muscles will become stiff, weak and compromised in their ability to move & function properly."
-      />
-      <TableRow
-        title="Poll"
-        checkboxLabels={['Not tight', 'Moderate', 'Fully tight']}
-        subRows={['Left', 'Right']}
-      />
-      <TableRow
-        title="Masseter Muscle/Cheek"
-        checkboxLabels={['Not tight', 'Moderate', 'Fully tight']}
-        subRows={['Left', 'Right']}
-      />
-      <TableRow
-        title="Rectus Capitus Lateralis"
-        checkboxLabels={['Not tight', 'Moderate', 'Fully tight']}
-        subRows={['Left', 'Right']}
-      />
-      <TableRow
-        title="Splenius"
-        checkboxLabels={['Not tight', 'Moderate', 'Fully tight']}
-        subRows={['Left', 'Right']}
-      />
+      <div className="eq-table-page_section">
+        <TableRowDivider
+          header="Upper Neck Muscles (Crest)"
+          body="As a way of relating to overall neck tightness in your horse, walk around while stiffening the base of your neck...you will soon discover the effect it has on your shoulders - the shoulder muscles will become stiff, weak and compromised in their ability to move & function properly."
+        />
+        <TableRow
+          title="Poll"
+          checkboxLabels={['Not tight', 'Moderate', 'Fully tight']}
+          subRows={['Left', 'Right']}
+        />
+        <TableRow
+          title="Masseter Muscle/Cheek"
+          checkboxLabels={['Not tight', 'Moderate', 'Fully tight']}
+          subRows={['Left', 'Right']}
+        />
+        <TableRow
+          title="Rectus Capitus Lateralis"
+          checkboxLabels={['Not tight', 'Moderate', 'Fully tight']}
+          subRows={['Left', 'Right']}
+        />
+        <TableRow
+          title="Splenius"
+          checkboxLabels={['Not tight', 'Moderate', 'Fully tight']}
+          subRows={['Left', 'Right']}
+        />
+      </div>
       <TableRowDivider header="Lower Neck Muscle" />
       <TableRow
         title="Multifidus Cervicus"
