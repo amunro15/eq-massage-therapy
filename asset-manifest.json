@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/eq-massage-therapy/static/css/main.3809e480.css",
-    "main.js": "/eq-massage-therapy/static/js/main.4bd784b2.js",
+    "main.css": "/eq-massage-therapy/static/css/main.7203532c.css",
+    "main.js": "/eq-massage-therapy/static/js/main.12a2debb.js",
     "static/js/703.5d7714d4.chunk.js": "/eq-massage-therapy/static/js/703.5d7714d4.chunk.js",
     "static/js/573.dc150759.chunk.js": "/eq-massage-therapy/static/js/573.dc150759.chunk.js",
     "static/js/787.f4af668d.chunk.js": "/eq-massage-therapy/static/js/787.f4af668d.chunk.js",
@@ -41,14 +41,14 @@
     "static/media/UG23.jpeg": "/eq-massage-therapy/static/media/UG23.987f87a6fa281116e3fb.jpeg",
     "index.html": "/eq-massage-therapy/index.html",
     "static/media/dropdown.svg": "/eq-massage-therapy/static/media/dropdown.84969c2b2b764635fa5634eb4d58f72d.svg",
-    "main.3809e480.css.map": "/eq-massage-therapy/static/css/main.3809e480.css.map",
-    "main.4bd784b2.js.map": "/eq-massage-therapy/static/js/main.4bd784b2.js.map",
+    "main.7203532c.css.map": "/eq-massage-therapy/static/css/main.7203532c.css.map",
+    "main.12a2debb.js.map": "/eq-massage-therapy/static/js/main.12a2debb.js.map",
     "703.5d7714d4.chunk.js.map": "/eq-massage-therapy/static/js/703.5d7714d4.chunk.js.map",
     "573.dc150759.chunk.js.map": "/eq-massage-therapy/static/js/573.dc150759.chunk.js.map",
     "787.f4af668d.chunk.js.map": "/eq-massage-therapy/static/js/787.f4af668d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3809e480.css",
-    "static/js/main.4bd784b2.js"
+    "static/css/main.7203532c.css",
+    "static/js/main.12a2debb.js"
   ]
 }
