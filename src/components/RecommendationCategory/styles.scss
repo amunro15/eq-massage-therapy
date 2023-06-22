@@ -1,5 +1,4 @@
 .eq-recommendation_category {
-  border: 1px solid black;
   border-bottom: none;
 
   &:last-child {
@@ -11,6 +10,7 @@
   }
 
   .eq-recommendation_category-label {
+    border: 1px solid black;
     display: flex;
     justify-content: space-between;
     font-size: 20px;
@@ -20,6 +20,13 @@
 
   .eq-recommendation_category-disabled {
     cursor: no-drop;
+    background-color: lightblue;
+    border-bottom: 1px solid black;
+    padding-left: 10px;
+
+    img {
+      display: none;
+    }
   }
 
   .eq-recommendation_category-dropdown {

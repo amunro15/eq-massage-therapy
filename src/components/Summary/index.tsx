@@ -92,13 +92,16 @@ export const Summary = () => {
           </div>
         </div>
       </div>
-      <TextArea
-        isDisabled={isPrepare}
-        onChange={(val: string) => handleFormChange('summary', val)}
-        label="Summary"
-        name="summary"
-        value={form['summary']}
-      />
+      {isPrepare && form['summary'] && (
+        <TextArea
+          isDisabled={isPrepare}
+          isPrepare={isPrepare}
+          onChange={(val: string) => handleFormChange('summary', val)}
+          label="Summary"
+          name="summary"
+          value={form['summary']}
+        />
+      )}
     </div>
   );
 };

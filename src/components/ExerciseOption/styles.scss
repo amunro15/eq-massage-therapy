@@ -2,6 +2,7 @@
   padding: 15px 5px;
   display: flex;
   page-break-inside: avoid;
+  border: 1px solid black;
 
   &:nth-child(odd) {
     background-color: aliceblue;
@@ -14,6 +15,7 @@
   &.eq-exercise_option-disabled {
     cursor: no-drop;
     background-color: unset;
+    border-bottom: 1px solid black;
   }
 
   .eq-checkbox {

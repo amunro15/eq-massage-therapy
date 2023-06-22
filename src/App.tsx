@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 
 import React from 'react';
 import html2pdf from 'html2pdf.js';
@@ -15,7 +15,7 @@ import { Submission } from 'components/Submission';
 
 const App = () => {
   return (
-    <div className="App" id="app">
+    <div className="app" id="app">
       <Form
         initialValues={{
           'client-name': '',
@@ -65,19 +65,18 @@ const App = () => {
         }}
         onSubmit={() =>
           html2pdf(document.getElementById('pdf'), {
-            margin: 3,
+            margin: [5, 5, 5, 5],
             filename: 'myfile.pdf',
             autoPaging: 'text'
           }).set({
             pagebreak: {
-              mode: ['avoid-all', 'css'],
-              before: ['#pagebreak0', '#pagebreak1', '#pagebreak2']
+              mode: ['avoid-all', 'css']
             }
           })
         }>
-        <div id="pdf">
+        <div className="app-pdf" id="pdf">
           <Summary />
-          <Heading type={HeadingType.H1}>Muscle Groups and Functions</Heading>
+          <Heading type={HeadingType.H2}>Muscle Groups and Functions</Heading>
           <Table />
           <Paragraph>
             PLEASE NOTE: EQUINE MASSAGE THERAPY &amp; EQUINE ACUPRESSURE THERAPY ARE NOT

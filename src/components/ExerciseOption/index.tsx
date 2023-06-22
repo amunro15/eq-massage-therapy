@@ -25,7 +25,9 @@ export const ExerciseOption = ({ data }: Props) => {
         'eq-exercise_option-disabled': isPrepare
       })}
       onClick={() => !isPrepare && handleFormChange(id, !form[id])}>
-      <Checkbox isDisabled={isPrepare} id={id} isChecked={!!form[id]} name={header} />
+      {!isPrepare && (
+        <Checkbox isDisabled={isPrepare} id={id} isChecked={!!form[id]} name={header} />
+      )}
       <div className="eq-exercise_option-content">
         <div className="eq-exercise_option-content-copy">
           <Heading type={HeadingType.H2}>{header}</Heading>
