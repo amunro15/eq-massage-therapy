@@ -5,7 +5,7 @@ const payload = {
   'false-classname': false
 };
 
-test('classname', () => {
+describe('classname', () => {
   it('concatenates conditionally true classnames', () => {
     const res = classname('base-classname', payload);
     expect(res).toStrictEqual('base-classname true-classname');

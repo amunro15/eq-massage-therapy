@@ -1,6 +1,6 @@
 import { isEmptyObject } from '../object';
 
-test('isEmptyObject', () => {
+describe('isEmptyObject', () => {
   it('returns true if empty object', () => {
     const res = isEmptyObject({});
     expect(res).toStrictEqual(true);
